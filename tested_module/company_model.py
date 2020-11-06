@@ -14,8 +14,8 @@ class Department(object):
         self.members.append(name)
 
     def remove_member(self, name):
-        assert name in self.members
-        self.members.remove(name)
+        if name in self.members:
+            self.members.remove(name)
 
     @property
     def count(self):
@@ -30,7 +30,7 @@ class CompanyModel(object):
         self.name = name
         self.users = []
         self.departments = {}
-    
+
     def __str__(self):
         return self.name
 
@@ -47,4 +47,4 @@ class CompanyModel(object):
 
     def get_headcount_for(self, department):
         return self.departments[department].count
-    
+
