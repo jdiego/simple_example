@@ -16,6 +16,8 @@ class Department(object):
     def remove_member(self, name):
         if name in self.members:
             self.members.remove(name)
+        else:
+            raise Exception("Name not found {0}".format(name))
 
     @property
     def count(self):
