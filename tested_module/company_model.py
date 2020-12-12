@@ -45,7 +45,10 @@ class CompanyModel(object):
             print(f"User does not found {name}")
 
     def count_persons_per_department(self):
-        pass
+        count_dict = {}
+        for deparment in self.departments:
+            count_dict{deparment} = self.get_headcount_for(deparment)
+        return count_dict
 
     def get_headcount_for(self, department):
         return self.departments[department].count
